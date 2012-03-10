@@ -43,6 +43,7 @@
 #import "GPGMailPreferences.h"
 #import "GPGMailBundle.h"
 #import "GPGVersionComparator.h"
+#import "XPCKit.h"
 
 
 NSString *GPGMailSwizzledMethodPrefix = @"MA";
@@ -354,21 +355,50 @@ static BOOL gpgMailWorks = NO;
 	return gpgMailWorks;
 }
 
+- (void)testXPC {
+    XPCConnection *connection = [[XPCConnection alloc] initWithServiceName:@"org.gpgtools.GPG"];
+    connection.eventHandler = ^(NSDictionary *message, XPCConnection *inConnection){
+        NSString *result = [message objectForKey:@"result"];
+        NSLog(@"Received from GPG service: %@", result);
+    };
+    
+    NSString *armored = @"-----BEGIN PGP MESSAGE-----\n"
+@"Version: GnuPG/MacGPG2 v2.0.18 (Darwin)\n"
+@"Comment: There is no spoon...\n"
+@"Comment: GPGTools - http://gpgtools.org\n"
+@"\n"
+@"hQEMA79dthiu9fuIAQf/U016vvpd+Tu+ZPaKo+AL9XFle+KSb0D8MLksm/3a3zc7\n"
+@"Qv08cIvvIqkwxOEk8U/oE4jgp2IGWUtOTs9tYqTdg6sAZ4CNyuX7chRN7b80jnR3\n"
+@"Tc8UjpzJO1bLq+ghSCz0SV2OZKS4a8EcuUo8wi8xb19SxK6cFOHoPEGCdUaDNG2M\n"
+@"1h/aSwI3s5F5KoQFCqjJKVV8JoivVc79vsZKfigD7Iwk/ZaC0WuRfmw9/9CAs32V\n"
+@"trnz++da4T3IaCXosn1b64N3irY4pjDakoqqfC20wzgRp6jpBt9jiRKrmv7ejpGJ\n"
+@"KUHIUEeI/ZqMMTLJ5GKUeVJAzOSSyERpNVf7JNT38NJFARBU16eW888av8246gF2\n"
+@"fcEHEQZWXRGrKlMR9fvyh1Dv8Kzp+y9S/azhb48mBYYQokAEsJ0iWHBsxUD3a0tl\n"
+@"TtCYLRwQ\n"
+@"=YK/G\n"
+@"-----END PGP MESSAGE-----";
+    
+    NSLog(@"Attempt to decrypt message: %@",  armored);
+
+    [connection sendMessage:[NSDictionary dictionaryWithObjectsAndKeys:armored, @"EncryptedData", nil]];
+    
+}
 
 - (BOOL)checkGPG {
-    self.gpgStatus = (GPGErrorCode)[GPGController testGPG];
-    switch (gpgStatus) {
-        case GPGErrorNotFound:
-            DebugLog(@"DEBUG: checkGPG - GPGErrorNotFound");
-            break;
-        case GPGErrorConfigurationError:
-            DebugLog(@"DEBUG: checkGPG - GPGErrorConfigurationError");
-        case GPGErrorNoError:
-            return YES;
-        default:
-            DebugLog(@"DEBUG: checkGPG - %i", gpgStatus);
-            break;
-    }
+//    self.gpgStatus = (GPGErrorCode)[GPGController testGPG];
+//    switch (gpgStatus) {
+//        case GPGErrorNotFound:
+//            DebugLog(@"DEBUG: checkGPG - GPGErrorNotFound");
+//            break;
+//        case GPGErrorConfigurationError:
+//            DebugLog(@"DEBUG: checkGPG - GPGErrorConfigurationError");
+//        case GPGErrorNoError:
+//            return YES;
+//        default:
+//            DebugLog(@"DEBUG: checkGPG - %i", gpgStatus);
+//            break;
+//    }
+    [self testXPC];
     return NO;
 }
 
@@ -379,15 +409,16 @@ static BOOL gpgMailWorks = NO;
     collectingQueue = dispatch_queue_create("org.gpgmail.collection", NULL);
     keysUpdateQueue = dispatch_queue_create("org.gpgmail.update", DISPATCH_QUEUE_CONCURRENT);
     
-    // Init GPGController.
-    [self gpgc];
-    
-    // Swizzling the Mail classes.
-    [self _installGPGMail];
-    // Load all necessary images.
-    [self _loadImages];
-    // Install the Sparkle Updater.
-    [self _installSparkleUpdater];
+    //    
+//    // Init GPGController.
+//    [self gpgc];
+//    
+//    // Swizzling the Mail classes.
+//    [self _installGPGMail];
+//    // Load all necessary images.
+//    [self _loadImages];
+//    // Install the Sparkle Updater.
+//    [self _installSparkleUpdater];
     
     self.accountExistsForSigning = YES;
 }
@@ -396,6 +427,9 @@ static BOOL gpgMailWorks = NO;
 	if (self = [super init]) {
 		NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
 		NSDictionary *defaultsDictionary = [NSDictionary dictionaryWithContentsOfFile:[myBundle pathForResource:@"GPGMailBundle" ofType:@"defaults"]];
+        
+    [self testXPC];
+        return self;
         
         [[GPGOptions sharedOptions] setStandardDomain:[[NSBundle bundleForClass:[self class]] bundleIdentifier]];
 		if (defaultsDictionary) {
@@ -546,6 +580,8 @@ static BOOL gpgMailWorks = NO;
 	if (![updateLock tryLock])
 		return;
 	
+    NSLog(@"[GPGC] Updating keys...");
+    
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	@try {
