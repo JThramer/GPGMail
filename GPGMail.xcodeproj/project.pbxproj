@@ -40,8 +40,6 @@
 		1B95B4C01501297B005BE119 /* ADVANCED PREFERENCES in Resources */ = {isa = PBXBuildFile; fileRef = 1B95B4BF1501297B005BE119 /* ADVANCED PREFERENCES */; };
 		1B97AE3815096FA700A4F0F2 /* MMStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B97AE3715096FA700A4F0F2 /* MMStopwatch.m */; };
 		1B9EA15C15088430006CF57D /* GPG.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 1B9EA15B15088430006CF57D /* GPG.entitlements */; };
-		1B9EA1AE15088C22006CF57D /* XPCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9EA1A315088C06006CF57D /* XPCKit.framework */; };
-		1B9EA1B115088C31006CF57D /* XPCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9EA1A315088C06006CF57D /* XPCKit.framework */; };
 		1B9EA1B31508926D006CF57D /* org.gpgtools.GPG.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B61773C150864C80062D5B4 /* org.gpgtools.GPG.xpc */; };
 		1B9EA1B615089418006CF57D /* Libmacgpg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222C442813C91A330035BEDE /* Libmacgpg.framework */; };
 		1B9EAAAB14352C270063F2F1 /* Frameworks/RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9EAAAA14352C270063F2F1 /* Frameworks/RegexKit.framework */; };
@@ -139,61 +137,47 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Libmacgpg;
 		};
+		1B4A0797155C0DFD00A23F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B4A078B155C0DFD00A23F4E /* XPCKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1EEDD0CF13DE9FAB00D5AEC3;
+			remoteInfo = XPCKit;
+		};
+		1B4A0799155C0DFD00A23F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B4A078B155C0DFD00A23F4E /* XPCKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1EEDD02813DD485400D5AEC3;
+			remoteInfo = libXPCKit;
+		};
+		1B4A079B155C0DFD00A23F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B4A078B155C0DFD00A23F4E /* XPCKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1EEDD05913DD48BB00D5AEC3;
+			remoteInfo = TestApp;
+		};
+		1B4A079D155C0DFD00A23F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B4A078B155C0DFD00A23F4E /* XPCKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1EEDD07513DD48D800D5AEC3;
+			remoteInfo = TestService;
+		};
+		1B4A079F155C0DFD00A23F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B4A078B155C0DFD00A23F4E /* XPCKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1EEDD03C13DD485400D5AEC3;
+			remoteInfo = XPCKitTests;
+		};
 		1B61774C150865280062D5B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B61773B150864C80062D5B4;
 			remoteInfo = GPG;
-		};
-		1B9EA1A215088C06006CF57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B9EA19615088C05006CF57D /* XPCKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1EEDD0CF13DE9FAB00D5AEC3;
-			remoteInfo = XPCKit;
-		};
-		1B9EA1A415088C06006CF57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B9EA19615088C05006CF57D /* XPCKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1EEDD02813DD485400D5AEC3;
-			remoteInfo = libXPCKit;
-		};
-		1B9EA1A615088C06006CF57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B9EA19615088C05006CF57D /* XPCKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1EEDD05913DD48BB00D5AEC3;
-			remoteInfo = TestApp;
-		};
-		1B9EA1A815088C06006CF57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B9EA19615088C05006CF57D /* XPCKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1EEDD07513DD48D800D5AEC3;
-			remoteInfo = TestService;
-		};
-		1B9EA1AA15088C06006CF57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B9EA19615088C05006CF57D /* XPCKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1EEDD03C13DD485400D5AEC3;
-			remoteInfo = XPCKitTests;
-		};
-		1B9EA1AC15088C1C006CF57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B9EA19615088C05006CF57D /* XPCKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EEDD0CE13DE9FAB00D5AEC3;
-			remoteInfo = XPCKit;
-		};
-		1B9EA1AF15088C29006CF57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B9EA19615088C05006CF57D /* XPCKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EEDD0CE13DE9FAB00D5AEC3;
-			remoteInfo = XPCKit;
 		};
 		1B9EA1B415089413006CF57D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1406,6 +1390,7 @@
 		1B45481914F7D0F0000F1646 /* GMSecurityHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMSecurityHistory.m; sourceTree = "<group>"; };
 		1B4741CE14F550B700F36C54 /* GMSecurityControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMSecurityControl.h; sourceTree = "<group>"; };
 		1B4741CF14F550B800F36C54 /* GMSecurityControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMSecurityControl.m; sourceTree = "<group>"; };
+		1B4A078B155C0DFD00A23F4E /* XPCKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XPCKit.xcodeproj; path = Dependencies/XPCKit/XPCKit.xcodeproj; sourceTree = "<group>"; };
 		1B51231C1409345C004D0818 /* MailDocumentEditor+GPGMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MailDocumentEditor+GPGMail.h"; sourceTree = "<group>"; };
 		1B51231D1409345C004D0818 /* MailDocumentEditor+GPGMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MailDocumentEditor+GPGMail.m"; sourceTree = "<group>"; };
 		1B51232314093795004D0818 /* NSBezierPath_KBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBezierPath_KBAdditions.m; sourceTree = "<group>"; };
@@ -1438,7 +1423,6 @@
 		1B97AE3615096FA700A4F0F2 /* MMStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMStopwatch.h; sourceTree = "<group>"; };
 		1B97AE3715096FA700A4F0F2 /* MMStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMStopwatch.m; sourceTree = "<group>"; };
 		1B9EA15B15088430006CF57D /* GPG.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GPG.entitlements; sourceTree = "<group>"; };
-		1B9EA19615088C05006CF57D /* XPCKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XPCKit.xcodeproj; path = "../../../Downloads/amazingsyco-XPCKit-0613148/XPCKit.xcodeproj"; sourceTree = "<group>"; };
 		1B9EAAAA14352C270063F2F1 /* Frameworks/RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Frameworks/RegexKit.framework; sourceTree = "<group>"; };
 		1BA12C2714FF578B00729B28 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/GPGAttachments.xib; sourceTree = "<group>"; };
 		1BA46CFA14EEF14300EBE49A /* MessageAttachment+GPGMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MessageAttachment+GPGMail.h"; sourceTree = "<group>"; };
@@ -1572,7 +1556,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B9EA1B615089418006CF57D /* Libmacgpg.framework in Frameworks */,
-				1B9EA1AE15088C22006CF57D /* XPCKit.framework in Frameworks */,
 				1B61773D150864C80062D5B4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1599,7 +1582,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B9EA1B115088C31006CF57D /* XPCKit.framework in Frameworks */,
 				1B165C6913D78E3C00CA5D61 /* Libmacgpg.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				559A81300838EEFD0052F47C /* AddressBook.framework in Frameworks */,
@@ -1684,7 +1666,7 @@
 		1B1949D011CC52090092B810 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				1B9EA19615088C05006CF57D /* XPCKit.xcodeproj */,
+				1B4A078B155C0DFD00A23F4E /* XPCKit.xcodeproj */,
 				222C440A13C919E90035BEDE /* Libmacgpg.xcodeproj */,
 			);
 			name = Dependencies;
@@ -2829,6 +2811,18 @@
 			path = DataDetectors;
 			sourceTree = "<group>";
 		};
+		1B4A078C155C0DFD00A23F4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B4A0798155C0DFD00A23F4E /* XPCKit.framework */,
+				1B4A079A155C0DFD00A23F4E /* libXPCKit.a */,
+				1B4A079C155C0DFD00A23F4E /* TestApp.app */,
+				1B4A079E155C0DFD00A23F4E /* com.mustacheware.TestService.xpc */,
+				1B4A07A0155C0DFD00A23F4E /* XPCKitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1B51232214093750004D0818 /* NSBezierPathAdditions */ = {
 			isa = PBXGroup;
 			children = (
@@ -2865,18 +2859,6 @@
 				1B9EA15B15088430006CF57D /* GPG.entitlements */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		1B9EA19715088C05006CF57D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1B9EA1A315088C06006CF57D /* XPCKit.framework */,
-				1B9EA1A515088C06006CF57D /* libXPCKit.a */,
-				1B9EA1A715088C06006CF57D /* TestApp.app */,
-				1B9EA1A915088C06006CF57D /* com.mustacheware.TestService.xpc */,
-				1B9EA1AB15088C06006CF57D /* XPCKitTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		1BAEF63F13E9F44800A59CED /* Common */ = {
@@ -3191,7 +3173,6 @@
 			);
 			dependencies = (
 				1B9EA1B515089413006CF57D /* PBXTargetDependency */,
-				1B9EA1AD15088C1C006CF57D /* PBXTargetDependency */,
 			);
 			name = GPG;
 			productName = GPG;
@@ -3254,7 +3235,6 @@
 			);
 			comments = "Old working:\nheader_search_path ..\nlibrary_style static\nother_linker_flags -force_flat_namespace -undefined suppress \nmacosx deployment target: default\n\n-bundle_loader /Applications/Mail.app/Contents/MacOS/Mail  -undefined dynamic_lookup\n";
 			dependencies = (
-				1B9EA1B015088C29006CF57D /* PBXTargetDependency */,
 				1B165C6813D78D9C00CA5D61 /* PBXTargetDependency */,
 				1B61774D150865280062D5B4 /* PBXTargetDependency */,
 			);
@@ -3297,8 +3277,8 @@
 					ProjectRef = 222C440A13C919E90035BEDE /* Libmacgpg.xcodeproj */;
 				},
 				{
-					ProductGroup = 1B9EA19715088C05006CF57D /* Products */;
-					ProjectRef = 1B9EA19615088C05006CF57D /* XPCKit.xcodeproj */;
+					ProductGroup = 1B4A078C155C0DFD00A23F4E /* Products */;
+					ProjectRef = 1B4A078B155C0DFD00A23F4E /* XPCKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -3312,39 +3292,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1B9EA1A315088C06006CF57D /* XPCKit.framework */ = {
+		1B4A0798155C0DFD00A23F4E /* XPCKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = XPCKit.framework;
-			remoteRef = 1B9EA1A215088C06006CF57D /* PBXContainerItemProxy */;
+			remoteRef = 1B4A0797155C0DFD00A23F4E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1B9EA1A515088C06006CF57D /* libXPCKit.a */ = {
+		1B4A079A155C0DFD00A23F4E /* libXPCKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libXPCKit.a;
-			remoteRef = 1B9EA1A415088C06006CF57D /* PBXContainerItemProxy */;
+			remoteRef = 1B4A0799155C0DFD00A23F4E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1B9EA1A715088C06006CF57D /* TestApp.app */ = {
+		1B4A079C155C0DFD00A23F4E /* TestApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = TestApp.app;
-			remoteRef = 1B9EA1A615088C06006CF57D /* PBXContainerItemProxy */;
+			remoteRef = 1B4A079B155C0DFD00A23F4E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1B9EA1A915088C06006CF57D /* com.mustacheware.TestService.xpc */ = {
+		1B4A079E155C0DFD00A23F4E /* com.mustacheware.TestService.xpc */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = com.mustacheware.TestService.xpc;
-			remoteRef = 1B9EA1A815088C06006CF57D /* PBXContainerItemProxy */;
+			remoteRef = 1B4A079D155C0DFD00A23F4E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1B9EA1AB15088C06006CF57D /* XPCKitTests.octest */ = {
+		1B4A07A0155C0DFD00A23F4E /* XPCKitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = XPCKitTests.octest;
-			remoteRef = 1B9EA1AA15088C06006CF57D /* PBXContainerItemProxy */;
+			remoteRef = 1B4A079F155C0DFD00A23F4E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		222C442813C91A330035BEDE /* Libmacgpg.framework */ = {
@@ -3613,16 +3593,6 @@
 			isa = PBXTargetDependency;
 			target = 1B61773B150864C80062D5B4 /* GPG */;
 			targetProxy = 1B61774C150865280062D5B4 /* PBXContainerItemProxy */;
-		};
-		1B9EA1AD15088C1C006CF57D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = XPCKit;
-			targetProxy = 1B9EA1AC15088C1C006CF57D /* PBXContainerItemProxy */;
-		};
-		1B9EA1B015088C29006CF57D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = XPCKit;
-			targetProxy = 1B9EA1AF15088C29006CF57D /* PBXContainerItemProxy */;
 		};
 		1B9EA1B515089413006CF57D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
