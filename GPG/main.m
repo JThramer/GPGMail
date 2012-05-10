@@ -9,7 +9,7 @@
 #include <xpc/xpc.h>
 #include <Foundation/Foundation.h>
 #import <Libmacgpg/Libmacgpg.h>
-#import "XPCKit.h"
+#import <XPCKit/XPCKit.h>
 
 int main(int argc, const char *argv[])
 {

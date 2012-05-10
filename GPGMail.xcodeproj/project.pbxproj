@@ -24,6 +24,7 @@
 		1B3F2FA113E59EE3006A8333 /* OptionalView+GPGMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F2FA013E59EE3006A8333 /* OptionalView+GPGMail.m */; };
 		1B45481A14F7D0F0000F1646 /* GMSecurityHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B45481914F7D0F0000F1646 /* GMSecurityHistory.m */; };
 		1B4741D014F550B800F36C54 /* GMSecurityControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4741CF14F550B800F36C54 /* GMSecurityControl.m */; };
+		1B4A07A5155C10CF00A23F4E /* XPCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4A0798155C0DFD00A23F4E /* XPCKit.framework */; };
 		1B51231E1409345C004D0818 /* MailDocumentEditor+GPGMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B51231D1409345C004D0818 /* MailDocumentEditor+GPGMail.m */; };
 		1B51232514093795004D0818 /* NSBezierPath_KBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B51232314093795004D0818 /* NSBezierPath_KBAdditions.m */; };
 		1B51232614093795004D0818 /* NSBezierPath+StrokeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B51232414093795004D0818 /* NSBezierPath+StrokeExtensions.m */; };
@@ -172,19 +173,26 @@
 			remoteGlobalIDString = 1EEDD03C13DD485400D5AEC3;
 			remoteInfo = XPCKitTests;
 		};
+		1B4A07A1155C104100A23F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 222C440A13C919E90035BEDE /* Libmacgpg.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Libmacgpg;
+		};
+		1B4A07A3155C10C500A23F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B4A078B155C0DFD00A23F4E /* XPCKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EEDD0CE13DE9FAB00D5AEC3;
+			remoteInfo = XPCKit;
+		};
 		1B61774C150865280062D5B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B61773B150864C80062D5B4;
 			remoteInfo = GPG;
-		};
-		1B9EA1B415089413006CF57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 222C440A13C919E90035BEDE /* Libmacgpg.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = Libmacgpg;
 		};
 		222C442713C91A330035BEDE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1555,6 +1563,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B4A07A5155C10CF00A23F4E /* XPCKit.framework in Frameworks */,
 				1B9EA1B615089418006CF57D /* Libmacgpg.framework in Frameworks */,
 				1B61773D150864C80062D5B4 /* Foundation.framework in Frameworks */,
 			);
@@ -3172,7 +3181,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				1B9EA1B515089413006CF57D /* PBXTargetDependency */,
+				1B4A07A4155C10C500A23F4E /* PBXTargetDependency */,
+				1B4A07A2155C104100A23F4E /* PBXTargetDependency */,
 			);
 			name = GPG;
 			productName = GPG;
@@ -3589,15 +3599,20 @@
 			name = Libmacgpg;
 			targetProxy = 1B165C6713D78D9C00CA5D61 /* PBXContainerItemProxy */;
 		};
+		1B4A07A2155C104100A23F4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Libmacgpg;
+			targetProxy = 1B4A07A1155C104100A23F4E /* PBXContainerItemProxy */;
+		};
+		1B4A07A4155C10C500A23F4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XPCKit;
+			targetProxy = 1B4A07A3155C10C500A23F4E /* PBXContainerItemProxy */;
+		};
 		1B61774D150865280062D5B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1B61773B150864C80062D5B4 /* GPG */;
 			targetProxy = 1B61774C150865280062D5B4 /* PBXContainerItemProxy */;
-		};
-		1B9EA1B515089413006CF57D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Libmacgpg;
-			targetProxy = 1B9EA1B415089413006CF57D /* PBXContainerItemProxy */;
 		};
 		4523EBDB150545A100497E39 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3745,6 +3760,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/Dependencies/Libmacgpg/build/$(CONFIGURATION)\"",
+					"\"$(SRCROOT)/Dependencies/XPCKit/build/$(CONFIGURATION)\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -3757,15 +3775,12 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (
-					"/Users/lukele/Downloads/amazingsyco-XPCKit-0613148/XPCKit",
-					"$(BUILT_PRODUCTS_DIR)/Dependencies/Libmacgpg/**",
-				);
 				INFOPLIST_FILE = "GPG/GPG-Info.plist";
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "org.gpgtools.$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)\" \"$(SRCROOT)/Frameworks\" \"$(SRCROOT)/Dependencies/Libmacgpg/build/$(CONFIGURATION)\"";
 				WRAPPER_EXTENSION = xpc;
 			};
 			name = Debug;
@@ -3780,19 +3795,19 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/Dependencies/XPCKit/build/$(CONFIGURATION)\"",
+					"\"$(SRCROOT)/Dependencies/Libmacgpg/build/$(CONFIGURATION)\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GPG/GPG-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"/Users/lukele/Downloads/amazingsyco-XPCKit-0613148/XPCKit",
-					"$(BUILT_PRODUCTS_DIR)/Dependencies/Libmacgpg/**",
-				);
 				INFOPLIST_FILE = "GPG/GPG-Info.plist";
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "org.gpgtools.$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) \"$(SRCROOT)\" \"$(SRCROOT)/Frameworks\" \"$(SRCROOT)/Dependencies/Libmacgpg/build/$(CONFIGURATION)\"";
 				WRAPPER_EXTENSION = xpc;
 			};
 			name = Release;
